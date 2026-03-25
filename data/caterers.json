@@ -1,0 +1,8 @@
+[
+  { "id": 1, "name": "Saniya Catering", "location": "Karachi", "price": 500, "rating": 4, "description": "Best biryani in town", "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400", "cuisines": ["Biryani", "Desi", "BBQ"] },
+  { "id": 2, "name": "Royal Feast", "location": "Lahore", "price": 800, "rating": 5, "description": "Wedding and valima events", "image": "https://images.unsplash.com/photo-1555244162-803834f70033?w=400", "cuisines": ["BBQ", "Continental", "Desi"] },
+  { "id": 3, "name": "Star Kitchen", "location": "Islamabad", "price": 600, "rating": 4, "description": "Corporate events catering", "image": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400", "cuisines": ["Continental", "Fast Food"] },
+  { "id": 4, "name": "Mehfil Caterers", "location": "Rawalpindi", "price": 700, "rating": 3, "description": "Traditional Pakistani cuisine", "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400", "cuisines": ["Desi", "Mughlai"] },
+  { "id": 5, "name": "Zaiqa Foods", "location": "Multan", "price": 450, "rating": 4, "description": "Affordable home-style cooking", "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400", "cuisines": ["Desi", "Street Food"] },
+  { "id": 6, "name": "Grand Dastarkhwan", "location": "Faisalabad", "price": 950, "rating": 5, "description": "Premium buffet catering", "image": "https://images.unsplash.com/photo-1530062845289-9109b2c9c868?w=400", "cuisines": ["Mughlai", "Continental", "BBQ"] }
+]
