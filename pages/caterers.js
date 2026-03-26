@@ -7,6 +7,7 @@ import styles from "../styles/caterers.module.css";
 export default function CaterersPage() {
   const [caterers, setCaterers] = useState([]);
   const [search, setSearch] = useState("");
+  const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -17,7 +18,7 @@ export default function CaterersPage() {
         const res = await fetch("/api/caterers");
         if (!res.ok) throw new Error("Failed to fetch caterers");
         const json = await res.json();
-        setCaterers(json); // ✅ Fixed — direct array
+        setCaterers(json);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -30,8 +31,9 @@ export default function CaterersPage() {
 
   const filtered = caterers.filter((c) => {
     const matchesName = c.name.toLowerCase().includes(search.toLowerCase());
-    const matchesPrice = maxPrice === "" || c.price <= Number(maxPrice); // ✅ Fixed — price
-    return matchesName && matchesPrice;
+    const matchesMin = minPrice === "" || Number(c.price) >= Number(minPrice);
+    const matchesMax = maxPrice === "" || Number(c.price) <= Number(maxPrice);
+    return matchesName && matchesMin && matchesMax;
   });
 
   return (
@@ -48,6 +50,14 @@ export default function CaterersPage() {
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className={styles.input}
+        />
+        <input
+          type="number"
+          placeholder="Min price per plate (₹)"
+          value={minPrice}
+          onChange={(e) => setMinPrice(e.target.value)}
+          className={styles.input}
+          min={0}
         />
         <input
           type="number"
